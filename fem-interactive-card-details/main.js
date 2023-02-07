@@ -1,4 +1,4 @@
-import './style.css'
+import './style.css';
 //import { cardManipulation } from './functionality.js';
 const number = new RegExp(/^d+$/);
 document.querySelector('#app').innerHTML = `
@@ -70,30 +70,6 @@ document.querySelector('#app').innerHTML = `
       .
   </footer>
 `
-/*
-const cardNumberInput = document.querySelector('.card-number');
-const cardNumberInputButton = document.querySelector('#card-number');
-const cardHolderInput = document.querySelector('.owner');
-const cardHolderInputButton = document.querySelector('#name');
-const cardMonthExpInput = document.querySelector('.month');
-const cardYearExpInput = document.querySelector('.year');
-const cardCvcInput = document.querySelector('#cvc');
-cardNumberInputButton.addEventListener("input",(e) =>{
-    cardNumberInput.textContent = e;
-},{passive: true});
-cardHolderInputButton.addEventListener("input",(e) =>{
-    cardHolderInput.textContent = e.currentTarget.textContent;
-},{passive: true});
-cardMonthExpInput.addEventListener("input",() =>{
-    cardMonthExpInput.innerHTML = text;
-},{passive: true});
-cardYearExpInput.addEventListener("input",() =>{
-    cardYearExpInput.innerHTML = x.value;
-},{passive: true});
-cardCvcInput.addEventListener("input",() =>{
-    cardCvcInput.innerHTML =x.value;
-},{passive: true});
-  */
 const domElements = {
   form: document.querySelector('form'),
   success: document.querySelector('.success'),
