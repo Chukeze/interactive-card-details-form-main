@@ -99,6 +99,9 @@ picture,svg {
 
 
 /*Utility classes*/
+.hidden{
+  display: none;
+}
 .text-error{
   color:var(--color-input-error);
 }
