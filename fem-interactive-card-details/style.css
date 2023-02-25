@@ -147,7 +147,7 @@ img{
 /*general styling*/
 #app{
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   width: 100%;
   gap: 5em;
 }
@@ -232,18 +232,49 @@ main{
   row-gap: var(--size-700);
 }
 .odd-columns{
+  --input-min-size: minmax(5rem, 10vw);
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: var(--input-min-size) var(--input-min-size) minmax(0, 1fr);
   justify-content: center;
   align-items: center;
   column-gap: 1em;
 }
-
+.odd-columns > label:nth-of-type(1) {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+.odd-columns > label:nth-of-type(2) {
+  grid-column: 3;
+  grid-row: 1;
+}
+.odd-columns > input:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 2;
+}
+.odd-columns > input:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
+}
+.odd-columns > input:nth-of-type(3) {
+  grid-column: 3;
+  grid-row: 2;
+}
+.odd-columns > p:nth-of-type(1) {
+  grid-column: 1 / span 3;
+  grid-row: 3;
+}
+.odd-columns > p:nth-of-type(2) {
+  grid-column: 3;
+  grid-row: 3;
+}
 
 /*form*/
 form{
   width: 100%;
   margin-inline: auto;
+}
+fieldset{
+  border: none;
 }
 /* Input */
 input{
@@ -259,6 +290,7 @@ input{
 }
 .inputs label{
   display: block;
+  text-transform: uppercase;
 }
 /*
 .mm-yy{
@@ -319,6 +351,10 @@ footer{
   justify-self: stretch;
   align-self: flex-end;
   margin: 0;
+}
+.form-error {
+  color: var(--color-input-error);
+  font-size: 0.9rem;
 }
 
 @media (max-width:55.5em) {
